@@ -24,6 +24,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45DECB82
 		tests\Directory.Packages.props = tests\Directory.Packages.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Abstractions", "src\SeoTracker.Abstractions\SeoTracker.Abstractions.csproj", "{39FC1BCE-A790-42EC-9C72-EB0114767C3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Core", "src\SeoTracker.Core\SeoTracker.Core.csproj", "{2B848F35-5397-46C4-8198-E3D889393EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Test.Integration", "tests\SeoTracker.Test.Integration\SeoTracker.Test.Integration.csproj", "{D643F108-5782-4899-8C0A-C3898CB1EF24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Core.Test.Unit", "tests\SeoTracker.Core.Test.Unit\SeoTracker.Core.Test.Unit.csproj", "{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Abstractions.Test.Unit", "tests\SeoTracker.Abstractions.Test.Unit\SeoTracker.Abstractions.Test.Unit.csproj", "{090ED927-4A10-427E-845C-6BBE5C6007F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,12 +44,37 @@ Global
 		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FC1BCE-A790-42EC-9C72-EB0114767C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FC1BCE-A790-42EC-9C72-EB0114767C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FC1BCE-A790-42EC-9C72-EB0114767C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FC1BCE-A790-42EC-9C72-EB0114767C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B848F35-5397-46C4-8198-E3D889393EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B848F35-5397-46C4-8198-E3D889393EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B848F35-5397-46C4-8198-E3D889393EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B848F35-5397-46C4-8198-E3D889393EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D643F108-5782-4899-8C0A-C3898CB1EF24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D643F108-5782-4899-8C0A-C3898CB1EF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D643F108-5782-4899-8C0A-C3898CB1EF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D643F108-5782-4899-8C0A-C3898CB1EF24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7E7A582A-3E0A-4C75-85F2-11B7420577BA} = {B63CD692-3953-48BE-AD33-46A268251105}
+		{39FC1BCE-A790-42EC-9C72-EB0114767C3A} = {B63CD692-3953-48BE-AD33-46A268251105}
+		{2B848F35-5397-46C4-8198-E3D889393EE5} = {B63CD692-3953-48BE-AD33-46A268251105}
+		{D643F108-5782-4899-8C0A-C3898CB1EF24} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
+		{8C2E724A-F2CD-475D-9F49-A280B80E7BDC} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
+		{090ED927-4A10-427E-845C-6BBE5C6007F2} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {534AF815-A4D9-4216-9B93-8DA851BC107F}
