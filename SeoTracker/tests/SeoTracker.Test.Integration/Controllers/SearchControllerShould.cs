@@ -15,7 +15,7 @@ namespace SeoTracker.Test.Integration.Controllers;
 public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
 {
     private readonly HttpClient _client = factory.Client;
-    private const string PositionSearchUrl = "/api/search/position";
+    private const string PositionSearchUrl = "/api/search/rank";
 
 
     [Theory]
