@@ -19,3 +19,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+// Exposed public marker.
+public partial class Program { }
