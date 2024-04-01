@@ -1,0 +1,6 @@
+@SeoTracker.Api.Host_HostAddress = http://localhost:5059
+
+GET {{SeoTracker.Api.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

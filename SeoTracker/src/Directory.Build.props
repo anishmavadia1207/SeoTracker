@@ -1,0 +1,4 @@
+<Project>
+	<Import Project="$(SolutionDir)/Directory.Build.props"/>
+	<Import Project="$(SolutionDir)/patterns/SourceProjectPattern.props"/>
+</Project>

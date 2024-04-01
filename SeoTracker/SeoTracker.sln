@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Api.Host", "src\SeoTracker.Api.Host\SeoTracker.Api.Host.csproj", "{7E7A582A-3E0A-4C75-85F2-11B7420577BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B63CD692-3953-48BE-AD33-46A268251105}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Packages.props = src\Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "patterns", "patterns", "{D97FABF6-640B-4908-802B-6E6921BEE9E9}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		patterns\SourceProjectPattern.props = patterns\SourceProjectPattern.props
+		patterns\TestProjectPattern.props = patterns\TestProjectPattern.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45DECB82-5292-4F57-B270-290CAEE4DC02}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+		tests\Directory.Packages.props = tests\Directory.Packages.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7A582A-3E0A-4C75-85F2-11B7420577BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E7A582A-3E0A-4C75-85F2-11B7420577BA} = {B63CD692-3953-48BE-AD33-46A268251105}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {534AF815-A4D9-4216-9B93-8DA851BC107F}
+	EndGlobalSection
+EndGlobal
