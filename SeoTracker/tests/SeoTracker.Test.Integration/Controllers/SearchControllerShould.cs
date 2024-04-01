@@ -15,6 +15,8 @@ namespace SeoTracker.Test.Integration.Controllers;
 public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
 {
     private readonly HttpClient _client = factory.Client;
+    private const string PositionSearchUrl = "/api/search/position";
+
 
     [Theory]
     [InlineData(null, null)]
@@ -27,7 +29,7 @@ public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
         string? searchTermQuery,
         string? urlSearchQuery)
     {
-        var response = await _client.GetAsync($"/search/position?{searchTermQuery}&{urlSearchQuery}");
+        var response = await _client.GetAsync($"{PositionSearchUrl}?{searchTermQuery}&{urlSearchQuery}");
 
         using var scope = new AssertionScope();
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
@@ -40,7 +42,7 @@ public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
         var url = faker.Internet.Url();
         var searchTerm = faker.Lorem.Word();
 
-        var response = await _client.GetAsync($"/search/position?searchTerm={searchTerm}&url={url}");
+        var response = await _client.GetAsync($"{PositionSearchUrl}?searchTerm={searchTerm}&url={url}");
         var content = await response.Content.ReadFromJsonAsync<SearchResult>();
 
         using var scope = new AssertionScope();
