@@ -11,9 +11,9 @@ namespace SeoTracker.Api.Host.Controllers;
 /// </summary>
 [ApiController]
 [Route("/api/[controller]")]
-public class SearchController(
+public class RankController(
     ISearchEngineManager manager,
-    ILogger<SearchController> logger) : ControllerBase
+    ILogger<RankController> logger) : ControllerBase
 {
     private readonly ISearchEngineManager _manager = manager;
     private readonly ILogger _logger = logger;
@@ -26,11 +26,16 @@ public class SearchController(
     /// <param name="searchTerm">The term to use.</param>
     /// <param name="url">The url to use</param>
     /// <returns>A response containing the search rank.</returns>
-    [HttpGet("rank")]
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<SearchResult>>> GetRankAsync(
         [FromQuery] string searchTerm,
         [FromQuery] string url)
     {
+        _logger.LogInformation(
+            "Request for search rank of {Url} with term {Term}",
+            url,
+            searchTerm);
+
         var results = await _manager.GetRanksAsync(searchTerm, url);
 
         var models = results.Select(r => r.MapToSearchResult());

@@ -12,10 +12,10 @@ using SeoTracker.Test.Integration.Configuration;
 namespace SeoTracker.Test.Integration.Controllers;
 
 [Collection(nameof(SharedTestCollection))]
-public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
+public class RankControllerShould(SeoTrackerWebApplicationFactory factory)
 {
     private readonly HttpClient _client = factory.Client;
-    private const string PositionSearchUrl = "/api/search/rank";
+    private const string RankSearchUrl = "/api/rank";
 
 
     [Theory]
@@ -29,7 +29,7 @@ public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
         string? searchTermQuery,
         string? urlSearchQuery)
     {
-        var response = await _client.GetAsync($"{PositionSearchUrl}?{searchTermQuery}&{urlSearchQuery}");
+        var response = await _client.GetAsync($"{RankSearchUrl}?{searchTermQuery}&{urlSearchQuery}");
 
         using var scope = new AssertionScope();
         response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
@@ -42,12 +42,12 @@ public class SearchControllerShould(SeoTrackerWebApplicationFactory factory)
         var url = faker.Internet.Url();
         var searchTerm = faker.Lorem.Word();
 
-        var response = await _client.GetAsync($"{PositionSearchUrl}?searchTerm={searchTerm}&url={url}");
-        var content = await response.Content.ReadFromJsonAsync<SearchResult>();
+        var response = await _client.GetAsync($"{RankSearchUrl}?searchTerm={searchTerm}&url={url}");
+        var content = await response.Content.ReadFromJsonAsync<IEnumerable<SearchResult>>();
 
         using var scope = new AssertionScope();
         response.StatusCode.Should().Be(HttpStatusCode.OK);
         content.Should().NotBeNull();
-        content?.Url.Should().Be(url);
+        content?.All(c => c.Url == url).Should().BeTrue();
     }
 }
