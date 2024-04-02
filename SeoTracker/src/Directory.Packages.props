@@ -5,6 +5,7 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 </Project>
