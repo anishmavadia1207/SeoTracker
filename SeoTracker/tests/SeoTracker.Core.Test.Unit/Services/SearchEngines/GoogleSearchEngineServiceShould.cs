@@ -73,26 +73,28 @@ public class GoogleSearchEngineServiceShould
 
         await action.Should().ThrowAsync<HttpRequestException>();
     }
-}
-
-public class TestHttpMessageHandler : HttpMessageHandler
-{
-    public string ResponseContent { get; set; }
-
-    public Exception ExceptionToThrow { get; set; }
-
-    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    private class TestHttpMessageHandler : HttpMessageHandler
     {
-        if (ExceptionToThrow != null)
+        public string? ResponseContent { get; set; }
+
+        public Exception? ExceptionToThrow { get; set; }
+
+        protected override Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            CancellationToken cancellationToken)
         {
-            throw ExceptionToThrow;
+            if (ExceptionToThrow != null)
+            {
+                throw ExceptionToThrow;
+            }
+
+            var response = new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+            {
+                Content = new StringContent(ResponseContent ?? string.Empty)
+            };
+
+            return Task.FromResult(response);
         }
-
-        var response = new HttpResponseMessage(System.Net.HttpStatusCode.OK)
-        {
-            Content = new StringContent(ResponseContent)
-        };
-
-        return Task.FromResult(response);
     }
+
 }
