@@ -57,7 +57,7 @@ public class GoogleSearchEngineService(
         }
         finally
         {
-            _client.Dispose();
+            _client?.Dispose();
         }
     }
 }
