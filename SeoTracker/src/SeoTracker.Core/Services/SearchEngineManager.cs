@@ -36,6 +36,5 @@ public class SearchEngineManager(
         var results = await Task.WhenAll(tasks);
 
         return results;
-        77
     }
 }
