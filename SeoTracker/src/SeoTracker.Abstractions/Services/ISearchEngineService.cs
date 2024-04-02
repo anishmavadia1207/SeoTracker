@@ -1,4 +1,6 @@
-﻿namespace SeoTracker.Abstractions.Services;
+﻿using SeoTracker.Abstractions.Models;
+
+namespace SeoTracker.Abstractions.Services;
 
 /// <summary>
 /// Interface for search engine service.
@@ -12,7 +14,7 @@ public interface ISearchEngineService
     /// <param name="url">The URL to get the rank for.</param>
     /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
     /// <returns>The rank of the URL.</returns>
-    Task<int> GetRankAsync(
+    Task<SearchRankDto> GetRankAsync(
         string searchTerm,
         string url,
         CancellationToken cancellationToken);

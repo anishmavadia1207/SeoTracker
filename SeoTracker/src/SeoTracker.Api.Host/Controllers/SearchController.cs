@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
 using SeoTracker.Abstractions.Services;
+using SeoTracker.Api.Host.Mappers;
 using SeoTracker.Api.Host.Models;
 
 namespace SeoTracker.Api.Host.Controllers;
@@ -11,10 +12,10 @@ namespace SeoTracker.Api.Host.Controllers;
 [ApiController]
 [Route("/api/[controller]")]
 public class SearchController(
-    ISearchEngineService searchEngineService,
+    ISearchEngineManager manager,
     ILogger<SearchController> logger) : ControllerBase
 {
-    private readonly ISearchEngineService _searchEngineService = searchEngineService;
+    private readonly ISearchEngineManager _manager = manager;
     private readonly ILogger _logger = logger;
 
 
@@ -26,15 +27,14 @@ public class SearchController(
     /// <param name="url">The url to use</param>
     /// <returns>A response containing the search rank.</returns>
     [HttpGet("rank")]
-    public async Task<ActionResult<SearchResult>> GetRankAsync(
+    public async Task<ActionResult<IEnumerable<SearchResult>>> GetRankAsync(
         [FromQuery] string searchTerm,
         [FromQuery] string url)
     {
-        var result = await _searchEngineService.GetRankAsync(
-            searchTerm,
-            url,
-            CancellationToken.None);
+        var results = await _manager.GetRanksAsync(searchTerm, url);
 
-        return Ok(new SearchResult(url, result));
+        var models = results.Select(r => r.MapToSearchResult());
+
+        return Ok(models);
     }
 }

@@ -1,4 +1,5 @@
-﻿using SeoTracker.Abstractions.Services;
+﻿using SeoTracker.Abstractions.Models;
+using SeoTracker.Abstractions.Services;
 
 namespace SeoTracker.Core.Services.SearchEngines;
 
@@ -8,7 +9,7 @@ namespace SeoTracker.Core.Services.SearchEngines;
 public class GoogleSearchEngineService : ISearchEngineService
 {
     /// <inheritdoc/>
-    public Task<int> GetRankAsync(
+    public Task<SearchRankDto> GetRankAsync(
         string searchTerm,
         string url,
         CancellationToken cancellationToken) => throw new NotImplementedException();
