@@ -24,15 +24,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{45DECB82
 		tests\Directory.Packages.props = tests\Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Abstractions", "src\SeoTracker.Abstractions\SeoTracker.Abstractions.csproj", "{39FC1BCE-A790-42EC-9C72-EB0114767C3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Abstractions", "src\SeoTracker.Abstractions\SeoTracker.Abstractions.csproj", "{39FC1BCE-A790-42EC-9C72-EB0114767C3A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Core", "src\SeoTracker.Core\SeoTracker.Core.csproj", "{2B848F35-5397-46C4-8198-E3D889393EE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Test.Integration", "tests\SeoTracker.Test.Integration\SeoTracker.Test.Integration.csproj", "{D643F108-5782-4899-8C0A-C3898CB1EF24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Test.Integration", "tests\SeoTracker.Test.Integration\SeoTracker.Test.Integration.csproj", "{D643F108-5782-4899-8C0A-C3898CB1EF24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Core.Test.Unit", "tests\SeoTracker.Core.Test.Unit\SeoTracker.Core.Test.Unit.csproj", "{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Core.Test.Unit", "tests\SeoTracker.Core.Test.Unit\SeoTracker.Core.Test.Unit.csproj", "{8C2E724A-F2CD-475D-9F49-A280B80E7BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Abstractions.Test.Unit", "tests\SeoTracker.Abstractions.Test.Unit\SeoTracker.Abstractions.Test.Unit.csproj", "{090ED927-4A10-427E-845C-6BBE5C6007F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoTracker.Abstractions.Test.Unit", "tests\SeoTracker.Abstractions.Test.Unit\SeoTracker.Abstractions.Test.Unit.csproj", "{090ED927-4A10-427E-845C-6BBE5C6007F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Api.Host.Test.Unit", "tests\SeoTracker.Api.Host.Test.Unit\SeoTracker.Api.Host.Test.Unit.csproj", "{BDF8D174-56CB-41DD-B6EB-0C5571AE6147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoTracker.Test.Generators", "tests\SeoTracker.Test.Generators\SeoTracker.Test.Generators.csproj", "{BD1D8996-EC72-4B27-92BB-A11CB8DA8E1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +68,14 @@ Global
 		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090ED927-4A10-427E-845C-6BBE5C6007F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF8D174-56CB-41DD-B6EB-0C5571AE6147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF8D174-56CB-41DD-B6EB-0C5571AE6147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF8D174-56CB-41DD-B6EB-0C5571AE6147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF8D174-56CB-41DD-B6EB-0C5571AE6147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1D8996-EC72-4B27-92BB-A11CB8DA8E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1D8996-EC72-4B27-92BB-A11CB8DA8E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1D8996-EC72-4B27-92BB-A11CB8DA8E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1D8996-EC72-4B27-92BB-A11CB8DA8E1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +87,8 @@ Global
 		{D643F108-5782-4899-8C0A-C3898CB1EF24} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
 		{8C2E724A-F2CD-475D-9F49-A280B80E7BDC} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
 		{090ED927-4A10-427E-845C-6BBE5C6007F2} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
+		{BDF8D174-56CB-41DD-B6EB-0C5571AE6147} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
+		{BD1D8996-EC72-4B27-92BB-A11CB8DA8E1E} = {45DECB82-5292-4F57-B270-290CAEE4DC02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {534AF815-A4D9-4216-9B93-8DA851BC107F}

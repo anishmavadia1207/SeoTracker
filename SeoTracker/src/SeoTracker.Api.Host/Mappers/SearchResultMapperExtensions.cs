@@ -14,5 +14,5 @@ internal static class SearchResultMapperExtensions
     /// <param name="this">The dto to map from.</param>
     /// <returns>The mapped result.</returns>
     public static SearchResult MapToSearchResult(this SearchRankDto @this) =>
-        new(@this.EngineName, @this.Url, @this.Rank);
+        new(@this.SearchEngineName, @this.Url, @this.Query, @this.Rank);
 }

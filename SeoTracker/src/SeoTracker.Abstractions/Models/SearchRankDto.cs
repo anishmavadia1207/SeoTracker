@@ -12,7 +12,7 @@ public class SearchRankDto(
     /// <summary>
     /// The name of the search engine.
     /// </summary>
-    public string EngineName { get; } = engineName;
+    public string SearchEngineName { get; } = engineName;
 
     /// <summary>
     /// The URL of the page searched for.
