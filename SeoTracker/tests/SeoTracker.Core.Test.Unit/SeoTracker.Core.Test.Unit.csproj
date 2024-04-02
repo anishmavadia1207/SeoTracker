@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\SeoTracker.Core\SeoTracker.Core.csproj" />
+    <ProjectReference Include="..\SeoTracker.Test.Generators\SeoTracker.Test.Generators.csproj" />
   </ItemGroup>
 
   <ItemGroup>

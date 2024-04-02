@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SeoTracker.Abstractions\SeoTracker.Abstractions.csproj" />
+    <ProjectReference Include="..\SeoTracker.Core\SeoTracker.Core.csproj" />
   </ItemGroup>
 
 </Project>

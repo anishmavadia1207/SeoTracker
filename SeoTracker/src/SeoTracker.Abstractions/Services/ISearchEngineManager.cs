@@ -12,6 +12,10 @@ public interface ISearchEngineManager
     /// </summary>
     /// <param name="searchTerm">The search term</param>
     /// <param name="url">The url</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The results from all of the registered search engines.</returns>
-    Task<IEnumerable<SearchRankDto>> GetRanksAsync(string searchTerm, string url);
+    Task<IEnumerable<SearchRankDto>> GetRanksAsync(
+        string searchTerm,
+        string url,
+        CancellationToken cancellationToken = default);
 }

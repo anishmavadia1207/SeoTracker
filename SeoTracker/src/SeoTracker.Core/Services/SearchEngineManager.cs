@@ -18,7 +18,24 @@ public class SearchEngineManager(
     private readonly ILogger _logger = logger;
 
     ///<inheritdoc/>
-    public Task<IEnumerable<SearchRankDto>> GetRanksAsync(
+    public async Task<IEnumerable<SearchRankDto>> GetRanksAsync(
         string searchTerm,
-        string url) => throw new NotImplementedException();
+        string url,
+        CancellationToken cancellationToken = default)
+    {
+        var tasks = _searchEngineServices.Select(async s =>
+        {
+            _logger.LogDebug(
+                "Getting rank for {SearchTerm} from {SearchEngine}",
+                searchTerm,
+                s.GetType().Name);
+
+            return await s.GetRankAsync(searchTerm, url, cancellationToken);
+        });
+
+        var results = await Task.WhenAll(tasks);
+
+        return results;
+        77
+    }
 }

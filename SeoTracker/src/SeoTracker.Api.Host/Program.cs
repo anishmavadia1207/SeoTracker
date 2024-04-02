@@ -1,3 +1,7 @@
+using SeoTracker.Abstractions.Services;
+using SeoTracker.Core.Services;
+using SeoTracker.Core.Services.SearchEngines;
+
 var builder = WebApplication.CreateBuilder(args);
 const string HostCorsPolicy = "HostCorsPolicy";
 
@@ -12,6 +16,16 @@ builder.Services.AddCors(options =>
             hosts.Contains(new Uri(origin).Host))
         .AllowAnyHeader()
         .AllowAnyMethod()));
+
+builder.Services.AddHttpClient(
+    GoogleSearchEngineService.Name,
+    client =>
+    {
+        client.BaseAddress = new Uri("https://www.google.com");
+    });
+
+builder.Services.AddScoped<ISearchEngineService, GoogleSearchEngineService>();
+builder.Services.AddScoped<ISearchEngineManager, SearchEngineManager>();
 
 var app = builder.Build();
 
