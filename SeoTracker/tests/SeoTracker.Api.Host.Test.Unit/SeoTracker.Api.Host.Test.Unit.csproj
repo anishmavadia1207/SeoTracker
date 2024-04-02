@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\..\src\SeoTracker.Api.Host\SeoTracker.Api.Host.csproj" />
     <ProjectReference Include="..\SeoTracker.Test.Generators\SeoTracker.Test.Generators.csproj" />
