@@ -30,5 +30,7 @@ Navigate to the backend directory:
 
 Build and run the ASP.NET Web API project:
 
-`dotnet run`
-The ASP.NET Web API will be available at https://localhost:7183/.
+`dotnet build`
+`start-process src\SeoTracker.Api.Host\bin\Debug\net8.0\SeoTracker.Api.Host.exe`
+
+The ASP.NET Web API will be available at http://localhost:5000.
