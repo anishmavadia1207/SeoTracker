@@ -5,6 +5,7 @@ import { NgIf, NgFor } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-search-form',
@@ -18,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
   ],
 })
 export class SearchFormComponent {
