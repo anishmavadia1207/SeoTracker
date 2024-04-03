@@ -24,28 +24,24 @@ public class GoogleSearchEngineService(
         string url,
         CancellationToken cancellationToken)
     {
-        var searchUrl = $"search?num=100&q={Uri.EscapeDataString(searchTerm)}";
-
         try
         {
-            var response = await _client.GetStringAsync(
-                searchUrl,
-                cancellationToken);
-
-            var linkPattern = @"<a href=""(https?://[^\s""]+)""";
-
-            var matches = Regex.Matches(response, linkPattern);
-
-            var rank = 1;
-            foreach (Match match in matches)
+            var start = 0;
+            do
             {
-                var href = match.Groups[1].Value;
-                if (href.Contains(url))
+                var pageResult = await GetPage(
+                    searchTerm,
+                    url,
+                    start,
+                    cancellationToken);
+
+                if (pageResult is not null)
                 {
-                    return new SearchRankDto(Name, url, searchTerm, rank);
+                    return pageResult;
                 }
-                rank++;
-            }
+
+                start += 10;
+            } while (start < 90);
 
             return new SearchRankDto(Name, url, searchTerm, -1);
         }
@@ -59,5 +55,32 @@ public class GoogleSearchEngineService(
         {
             _client?.Dispose();
         }
+    }
+
+    private async Task<SearchRankDto?> GetPage(
+        string searchTerm,
+        string url,
+        int start,
+        CancellationToken cancellationToken)
+    {
+        const string linkPattern = @"<a href=""(https?://[^\s""]+)""";
+        var searchUrl = $"search?q={Uri.EscapeDataString(searchTerm)}&start={start}";
+        var response = await _client.GetStringAsync(
+            searchUrl,
+            cancellationToken);
+
+        var matches = Regex.Matches(response, linkPattern);
+        var rank = start;
+        foreach (Match match in matches)
+        {
+            var href = match.Groups[1].Value;
+            if (href.Contains(url))
+            {
+                return new SearchRankDto(Name, url, searchTerm, rank);
+            }
+            rank++;
+        }
+
+        return null;
     }
 }
