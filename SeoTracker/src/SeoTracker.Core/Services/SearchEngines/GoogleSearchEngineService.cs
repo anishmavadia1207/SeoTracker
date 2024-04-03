@@ -63,6 +63,7 @@ public class GoogleSearchEngineService(
         int start,
         CancellationToken cancellationToken)
     {
+        // todo: Solve for Google.com not allowing automated requests.
         const string linkPattern = @"<a href=""(https?://[^\s""]+)""";
         var searchUrl = $"search?q={Uri.EscapeDataString(searchTerm)}&start={start}";
         var response = await _client.GetStringAsync(
