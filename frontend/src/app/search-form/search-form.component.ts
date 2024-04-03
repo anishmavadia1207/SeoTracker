@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatAccordion } from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-search-form',
@@ -20,6 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatAccordion,
+    MatExpansionModule,
   ],
 })
 export class SearchFormComponent {

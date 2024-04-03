@@ -71,7 +71,7 @@ public class GoogleSearchEngineService(
             cancellationToken);
 
         var matches = Regex.Matches(response, linkPattern);
-        var rank = start;
+        var rank = start + 1;
         foreach (Match match in matches)
         {
             var href = match.Groups[1].Value;

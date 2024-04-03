@@ -23,3 +23,19 @@
     Search
   </button>
 </form>
+
+<mat-accordion class="results-container" *ngIf="results?.length">
+  <mat-expansion-panel *ngFor="let result of results">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ result.searchEngineName }} - Ranking:
+        {{ result.rank > 0 ? result.rank : "Below 100" }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Original Query: {{ result.query }}</p>
+    <p>
+      URL:
+      <a href="{{ result.url }}" target="_blank">{{ result.url }}</a>
+    </p>
+  </mat-expansion-panel>
+</mat-accordion>
