@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+  <div>
+    <label for="url">URL to Search For:</label>
+    <input
+      type="text"
+      id="url"
+      required
+      [(ngModel)]="searchParams.url"
+      name="url"
+    />
+  </div>
+  <div>
+    <label for="searchTerm">Search Term:</label>
+    <input
+      type="text"
+      id="searchTerm"
+      required
+      [(ngModel)]="searchParams.searchTerm"
+      name="searchTerm"
+    />
+  </div>
+  <button type="submit" [disabled]="!searchForm.form.valid">Search</button>
+</form>
+<div *ngIf="results">
+  <h2>Results:</h2>
+  <ul>
+    <li *ngFor="let result of results">
+      {{ result.name }} | Query: {{ result.originalQuery }} | Ranking:
+      {{ result.ranking }} | URL: {{ result.originalURL }}
+    </li>
+  </ul>
+</div>
