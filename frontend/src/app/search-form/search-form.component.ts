@@ -3,13 +3,22 @@ import { FormsModule } from '@angular/forms';
 import { SeoSearchService } from '../../services/seo-search-service';
 import { NgIf, NgFor } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css'],
   standalone: true,
-  imports: [FormsModule, NgIf, NgFor, HttpClientModule], // Standalone component imports
+  imports: [
+    FormsModule,
+    NgIf,
+    NgFor,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
 })
 export class SearchFormComponent {
   searchParams = {

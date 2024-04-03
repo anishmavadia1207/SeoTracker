@@ -1,32 +1,25 @@
 <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
-  <div>
-    <label for="url">URL to Search For:</label>
+  <mat-form-field appearance="fill">
+    <mat-label>URL to Search For</mat-label>
+    <input matInput [(ngModel)]="searchParams.url" name="url" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Search Term</mat-label>
     <input
-      type="text"
-      id="url"
-      required
-      [(ngModel)]="searchParams.url"
-      name="url"
-    />
-  </div>
-  <div>
-    <label for="searchTerm">Search Term:</label>
-    <input
-      type="text"
-      id="searchTerm"
-      required
+      matInput
       [(ngModel)]="searchParams.searchTerm"
       name="searchTerm"
+      required
     />
-  </div>
-  <button type="submit" [disabled]="!searchForm.form.valid">Search</button>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!searchForm.form.valid"
+  >
+    Search
+  </button>
 </form>
-<div *ngIf="results">
-  <h2>Results:</h2>
-  <ul>
-    <li *ngFor="let result of results">
-      {{ result.name }} | Query: {{ result.originalQuery }} | Ranking:
-      {{ result.ranking }} | URL: {{ result.originalURL }}
-    </li>
-  </ul>
-</div>
