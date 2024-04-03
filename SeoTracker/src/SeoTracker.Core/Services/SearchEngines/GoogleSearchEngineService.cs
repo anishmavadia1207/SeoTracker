@@ -29,7 +29,7 @@ public class GoogleSearchEngineService(
             var start = 0;
             do
             {
-                var pageResult = await GetPage(
+                var pageResult = await GetPageRankResults(
                     searchTerm,
                     url,
                     start,
@@ -40,8 +40,8 @@ public class GoogleSearchEngineService(
                     return pageResult;
                 }
 
-                start += 10;
-            } while (start < 90);
+                start += 15;
+            } while (start <= 85);
 
             return new SearchRankDto(Name, url, searchTerm, -1);
         }
@@ -57,7 +57,7 @@ public class GoogleSearchEngineService(
         }
     }
 
-    private async Task<SearchRankDto?> GetPage(
+    private async Task<SearchRankDto?> GetPageRankResults(
         string searchTerm,
         string url,
         int start,
