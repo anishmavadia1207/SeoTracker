@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+<form (ngSubmit)="onSubmit()" #searchForm="ngForm" class="form-container">
   <mat-form-field appearance="fill">
     <mat-label>URL to Search For</mat-label>
     <input matInput [(ngModel)]="searchParams.url" name="url" required />
